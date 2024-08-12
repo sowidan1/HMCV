@@ -8,6 +8,6 @@ class Customers extends Controller
 {
     public function index()
     {
-        return 'gg frontend';
+        return view('customers::frontend.index');
     }
 }

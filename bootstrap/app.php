@@ -11,8 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+
+        $middleware->alias([
+            'customer' => \Customers\Http\Middleware\CustomerMiddleware::class,
+        ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+
+
